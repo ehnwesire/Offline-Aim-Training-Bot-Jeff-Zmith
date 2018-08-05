@@ -1,0 +1,230 @@
+//----------------------------------------------------------------------------
+// BotProfile.db
+// Author: Michael S. Booth, Turtle Rock Studios (www.turtlerockstudios.com)
+//
+// This database defines bot "personalities". 
+// Feel free to edit it and define your own bots.
+//
+// Offline Aim Bot Practice
+// Edited by ehn
+
+
+//----------------------------------------------------------------------------
+
+//
+// All profiles begin with this data and overwrite their own
+//
+Default
+	Skill = 100
+	Aggression = 20
+	ReactionTime = 0.01
+	AttackDelay = 0
+	Teamwork = 10
+	AimFocusInitial = 20			// initial focus spread in degrees (from desired center)
+	AimFocusDecay = 0.7				// how much focus shrinks per sSMGnd (.25 = 25% of size after 1 sec)
+	AimFocusOffsetScale = 0.1		// controls accuracy when tracking to target (0 == perfect, should always be < 1)
+	AimfocusInterval = 0.1			// how often focus is adjusted (smaller intervals means better movement tracking)
+	WeaponPreference = none
+	Cost = 0
+	Difficulty = NORMAL
+	VoicePitch = 100
+	Skin = 0
+	LookAngleMaxAccelNormal = 2000.0 // these vars seems to be how the bot actually aims!
+	LookAngleStiffnessNormal = 100.0
+	LookAngleDampingNormal = 4.0
+	LookAngleMaxAccelAttacking = 3000.0
+	LookAngleStiffnessAttacking = 150.0
+	LookAngleDampingAttacking = 5.0
+End
+
+//----------------------------------------------------------------------------
+
+//
+// These templates inherit from Default and override with their values
+// The name of the template defines a type that is used by individual bot profiles
+//
+
+// weapon preference templates
+Template Rifle
+	WeaponPreference = m4a1
+	WeaponPreference = ak47
+	WeaponPreference = famas
+	WeaponPreference = galilar
+	WeaponPreference = ump45
+End
+
+Template Juan
+	WeaponPreference = deagle
+End
+
+Template Sniper
+	WeaponPreference = awp
+	WeaponPreference = ssg08
+	WeaponPreference = p250
+End
+
+Template SMG
+	WeaponPreference = p90
+	WeaponPreference = mp7
+	WeaponPreference = ump45
+	WeaponPreference = mac10
+	WeaponPreference = mp9
+End
+
+Template Spray
+	WeaponPreference = p90
+	WeaponPreference = p250	
+End
+
+
+// skill templates
+Template Elite
+	Skill = 100
+	Aggression = 50
+	ReactionTime = 0.01
+	AttackDelay = 0
+	Teamwork = 0
+	Cost = 4
+	Difficulty = EXPERT
+	VoicePitch = 150
+	AimFocusInitial = 0.01
+	AimFocusDecay = 0.01
+	AimFocusOffsetScale = 0
+	AimfocusInterval = 0.01
+	LookAngleMaxAccelNormal = 1000.0 // these vars seems to be how the bot actually aims!
+	LookAngleMaxAccelAttacking = 2000.0
+	LookAngleStiffnessNormal = 1000.0
+	LookAngleStiffnessAttacking = 1500.0
+	LookAngleDampingNormal = 5.0
+	LookAngleDampingAttacking = 4.0
+End
+
+Template Hard
+	Skill = 100
+	Rank = 1800 // Rank seems to be broken in game
+	Aggression = 50
+	ReactionTime = 0.01
+	AttackDelay = 0
+	Teamwork = 0
+	Cost = 4
+	Difficulty = HARD
+	VoicePitch = 50
+	AimFocusInitial = 0.01
+	AimFocusDecay = 0.01
+	AimFocusOffsetScale = 0
+	AimfocusInterval = 0.01
+	LookAngleMaxAccelNormal = 1000.0 // these vars seems to be how the bot actually aims!
+	LookAngleMaxAccelAttacking = 2000.0
+	LookAngleStiffnessNormal = 1000.0
+	LookAngleStiffnessAttacking = 1500.0
+	LookAngleDampingNormal = 5.0
+	LookAngleDampingAttacking = 4.0
+End
+
+//----------------------------------------
+
+// Individual Bot Profiles
+
+Elite+Rifle AimBot
+	Skin = 1
+	VoicePitch = 50
+End
+
+Elite+Rifle Archimedes!
+	Skin = 2
+	VoicePitch = 200
+End
+
+Elite+Rifle BeepBeepBoop
+	Skin = 4
+	VoicePitch = 1
+End
+
+Elite+Sniper BigMeanMutherHubbard
+	Skin = 3
+	VoicePitch = 90
+End
+
+Elite+Rifle ApertureSciencePrototypeXR7
+	Skin = 2
+	VoicePitch = 250
+End
+
+Elite+Rifle AmNot
+	Skin = 2
+	VoicePitch = 250
+End
+
+Elite+Rifle BoomerBile
+	Skin = 2
+	VoicePitch = 250
+End
+
+Elite+Rifle CannonFodder
+	Skin = 2
+	VoicePitch = 250
+End
+
+Elite+Sniper CEDA
+	Skin = 2
+	VoicePitch = 250
+End
+
+Elite+Sniper ForScience
+	Skin = 2
+	VoicePitch = 250
+End
+
+//----------------------------------------
+
+Hard+SMG Chell
+	Skin = 1
+	VoicePitch = 100
+End
+
+Hard+SMG Chucklenuts
+	Skin = 1
+	VoicePitch = 95
+End
+
+Hard+SMG CompanionCube
+	Skin = 2
+	VoicePitch = 90
+End
+
+Hard+SMG CrazedGunman
+	Skin = 4
+	VoicePitch = 102
+End
+
+Hard+SMG CreditToTeam
+	Skin = 1
+	VoicePitch = 98
+End
+
+Hard+SMG CRITRAWKETS
+	Skin = 2
+	VoicePitch = 96
+End
+
+Hard+SMG Crowbar
+	Skin = 4
+	VoicePitch = 103
+End
+
+Hard+SMG CryBaby
+	Skin = 1
+	VoicePitch = 105
+End
+
+Hard+SMG CrySomeMore
+	Skin = 2
+	VoicePitch = 97
+End
+
+Hard+SMG C++
+	Skin = 4
+	VoicePitch = 84
+End
+
+//----------------------------------------
